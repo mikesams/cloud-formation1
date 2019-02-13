@@ -4,10 +4,89 @@ Resources:
     VPC:
       Type: AWS::EC2::VPC
       Properties:
-         CidrBlock: 10.0.0.0./24
-         InstanceTendency: default
+         CidrBlock: 10.0.0.0/21
+         InstanceTenancy: default
          Tags:
             - Key: Name
               Value: studentProj-VPC
             - Key: Project
               Value: studentapp
+     studsubnetpub:
+       Type: AWS::EC2::Subnet
+       Properties:
+          VpcId:
+            Ref: VPC
+          CidrBlock: 10.0.1.0/24
+          AvailabilityZone: "us-east-2a"
+          Tags:
+             - Key: Name
+               Value: studentProj-Pub-AZ1
+             - Key: Project
+               Value: studentapp
+
+     studsubnetpub:
+       Type: AWS::EC2::Subnet
+       Properties:
+          VpcId:
+            Ref: VPC
+          CidrBlock: 10.0.2.0/24
+          AvailabilityZone: "us-east-2b"
+          Tags:
+             - Key: Name
+               Value: studentProj-Pub-AZ2
+             - Key: Project
+               Value: studentapp
+
+     studsubnetpub:
+       Type: AWS::EC2::Subnet
+       Properties:
+          VpcId:
+            Ref: VPC
+          CidrBlock: 10.0.3.0/24
+          AvailabilityZone: "us-east-2c"
+          Tags:
+             - Key: Name
+               Value: studentProj-Pub-AZ3
+             - Key: Project
+               Value: studentapp
+
+
+     studsubnetpvt:
+       Type: AWS::EC2::Subnet
+       Properties:
+          VpcId:
+            Ref: VPC
+          CidrBlock: 10.0.4.0/24
+          AvailabilityZone: "us-east-2a"
+          Tags:
+             - Key: Name
+               Value: studentProj-Pvt-AZ1
+             - Key: Project
+               Value: studentapp
+
+     studsubnetpvt:
+       Type: AWS::EC2::Subnet
+       Properties:
+          VpcId:
+            Ref: VPC
+          CidrBlock: 10.0.5.0/24
+          AvailabilityZone: "us-east-2b"
+          Tags:
+             - Key: Name
+               Value: studentProj-Pvt-AZ2
+             - Key: Project
+               Value: studentapp
+
+     studsubnetpvt:
+       Type: AWS::EC2::Subnet
+       Properties:
+          VpcId:
+            Ref: VPC
+          CidrBlock: 10.0.6.0/24
+          AvailabilityZone: "us-east-2c"
+          Tags:
+             - Key: Name
+               Value: studentProj-Pvt-AZ3
+             - Key: Project
+               Value: studentapp
+
